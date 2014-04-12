@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Easily switch Java versions
+
+ORIG_JAVA_HOME=$JAVA_HOME; #TODO handle empty value case
+JAVA_HOME=$(/usr/libexec/java_home -v$1);
+PATH=$(echo $PATH | sed -e "s;${ORIG_JAVA_HOME};${JAVA_HOME};");

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Combine VIM split panes with the power of find
+
+DEFAULT_PATH='.'
+find ${2-$DEFAULT_PATH} -iname "$1" | xargs vim -O

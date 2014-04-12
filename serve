@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Make any directory a server. Depends on open()
+
+open http://localhost:8000 #TODO wait for simple server to finish
+python -m SimpleHTTPServer
