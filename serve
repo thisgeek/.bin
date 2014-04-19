@@ -1,6 +1,16 @@
 #!/bin/bash
 
-# Make any directory a server. Depends on open()
+# Make any directory a server.
 
-open http://localhost:8000 #TODO wait for simple server to finish
+function open-when-ready() {
+  while true; do
+    lsof -i :8000 > /dev/null
+    if [[ $? == 0 ]]; then
+      open http://localhost:8000
+      break
+    fi
+  done
+}
+
+open-when-ready &
 python -m SimpleHTTPServer
