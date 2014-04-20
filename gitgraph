@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Print a pretty graph of the git log.
+
+# Based on http://stackoverflow.com/a/1838938/199644
+# and https://github.com/garybernhardt/dotfiles/blob/master/.githelpers
+
+AUTHOR="%x1b[33m(%an)%x1b[0m"
+SHA="%x1b[31m%h%x09"
+REFS="%x1b[32m%d"
+SUBJECT="%x1b[0m%x20%s%x20"
+
+FORMAT="${SHA}${REFS}${SUBJECT}${AUTHOR}"
+
+git log --graph --pretty=tformat:$FORMAT --full-history --all $@
