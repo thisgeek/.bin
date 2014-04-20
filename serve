@@ -4,14 +4,16 @@
 
 function open-when-ready() {
   PORT=${1-8000}
-  while true; do
-    lsof -i :$PORT > /dev/null
-    if [[ $? == 0 ]]; then
-      open http://localhost:$PORT
-      break
-    fi
-  done
+  if [[ $PORT =~ ^[0-9]+$ ]]; then
+    while true; do
+      lsof -i :$PORT > /dev/null
+      if [[ $? == 0 ]]; then
+        open http://localhost:$PORT
+        break
+      fi
+    done
+  fi
 }
 
-open-when-ready $@ &
+(open-when-ready $@ &)
 python -m SimpleHTTPServer $@
