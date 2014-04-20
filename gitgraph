@@ -21,4 +21,4 @@ AUTHOR="${YELLOW}(%an)${RESET}"
 
 FORMAT="${SHA}${REFS}${SUBJECT}${AUTHOR}"
 
-git log --graph --pretty=tformat:$FORMAT --full-history --all $@
+git log --graph --pretty=tformat:$FORMAT $@
