@@ -5,10 +5,19 @@
 # Based on http://stackoverflow.com/a/1838938/199644
 # and https://github.com/garybernhardt/dotfiles/blob/master/.githelpers
 
-AUTHOR="%x1b[33m(%an)%x1b[0m"
-SHA="%x1b[31m%h%x09"
-REFS="%x1b[32m%d"
-SUBJECT="%x1b[0m%x20%s%x20"
+BLACK="%x1b[0m"
+RED="%x1b[31m"
+GREEN="%x1b[32m"
+YELLOW="%x1b[33m"
+RESET=$BLACK
+
+HTAB="%x09"
+SPACE="%x20"
+
+SHA="${RED}%h${HTAB}"
+REFS="${GREEN}%d${SPACE}"
+SUBJECT="${BLACK}%s${SPACE}"
+AUTHOR="${YELLOW}(%an)${RESET}"
 
 FORMAT="${SHA}${REFS}${SUBJECT}${AUTHOR}"
 
