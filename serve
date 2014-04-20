@@ -3,14 +3,15 @@
 # Make any directory a server.
 
 function open-when-ready() {
+  port=${1-8000}
   while true; do
-    lsof -i :8000 > /dev/null
+    lsof -i :$port > /dev/null
     if [[ $? == 0 ]]; then
-      open http://localhost:8000
+      open http://localhost:$port
       break
     fi
   done
 }
 
-open-when-ready &
-python -m SimpleHTTPServer
+open-when-ready $@ &
+python -m SimpleHTTPServer $@
