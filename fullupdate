@@ -1,5 +1,0 @@
-#!/bin/bash -e
-
-(cd ~/.vim && rake)
-(npm -g update)
-(brew doctor && brew update && brew upgrade && brew cleanup)

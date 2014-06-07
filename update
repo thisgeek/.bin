@@ -1,0 +1,6 @@
+#!/bin/bash -e
+
+(cd ~/.vim && rake)
+(npm -g update)
+(brew update && brew doctor && brew upgrade && brew cleanup)
+(chromium update)
