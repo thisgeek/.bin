@@ -21,11 +21,4 @@ AUTHOR="${YELLOW}(%an)${RESET}"
 
 FORMAT="${SHA}${REFS}${SUBJECT}${AUTHOR}"
 
-OPTIONS=$*
-while getopts a opt; do
-  case $opt in
-    a) OPTIONS="$OPTIONS --all";;
-  esac
-done
-
-git log --graph --pretty=tformat:$FORMAT $OPTIONS
+git log --graph --pretty=tformat:$FORMAT $@
