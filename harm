@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Run node with es6 (harmony) options enabled.
+# From http://h3manth.com/new/blog/2013/es6-on-nodejs/
+
+node --use-strict $(node --v8-options | grep harm | awk '{print $1}' | xargs) $@
