@@ -5,20 +5,17 @@
 # Based on http://stackoverflow.com/a/1838938/199644
 # and https://github.com/garybernhardt/dotfiles/blob/master/.githelpers
 
-BLACK="%x1b[0m"
-RED="%x1b[31m"
-GREEN="%x1b[32m"
-YELLOW="%x1b[33m"
-RESET=$BLACK
+AUTOCOLOR="%C(auto)"
+RESET="%Creset"
 
 HTAB="%x09"
 SPACE="%x20"
 
-SHA="${RED}%h${HTAB}"
-REFS="${GREEN}%d${SPACE}"
-SUBJECT="${BLACK}%s${SPACE}"
-AUTHOR="${YELLOW}(%an)${RESET}"
+SHA="%h${HTAB}"
+REFS="%d${SPACE}"
+SUBJECT="%s${SPACE}"
+AUTHOR="%C(green)(%an)"
 
-FORMAT="${SHA}${REFS}${SUBJECT}${AUTHOR}"
+FORMAT="${AUTOCOLOR}${SHA}${REFS}${SUBJECT}${AUTHOR}${RESET}"
 
-git log --graph --pretty=tformat:$FORMAT $@
+git log --graph --oneline --decorate --boundary --format="${FORMAT}" $@
