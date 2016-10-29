@@ -3,4 +3,4 @@
 (cd ~/.vim && rake)
 (brew update && brew doctor && brew upgrade --all && brew cleanup)
 (npm -g update)
-(chromium update)
+(brew cask install --force chromium)
