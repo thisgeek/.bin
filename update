@@ -4,4 +4,3 @@
 (brew update && brew doctor && brew upgrade --all && brew cleanup)
 (npm -g update)
 (chromium update)
-(gem update && gem cleanup)
