@@ -2,5 +2,10 @@
 
 (cd ~/.vim && rake)
 (brew update && brew doctor && brew upgrade --all && brew cleanup)
-(npm -g update)
+(
+  CURRENT_NPM=`npmrc | grep \* | awk '{print $2}'`;
+  npmrc default;
+  npm -g update;
+  npmrc $CURRENT_NPM;
+)
 (brew cask install --force chromium)
