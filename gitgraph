@@ -18,4 +18,4 @@ AUTHOR="%C(green)(%an)"
 
 FORMAT="${AUTOCOLOR}${SHA}${REFS}${SUBJECT}${AUTHOR}${RESET}"
 
-git log --graph --oneline --decorate --boundary --format="${FORMAT}" $@
+git log --graph --decorate --boundary --format="${FORMAT}" $@
