@@ -1,3 +1,0 @@
-#!/bin/bash
-
-ffmpeg -i $1 -vf scale=768:-1 -r 20 $(basename $1).gif
