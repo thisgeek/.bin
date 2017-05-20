@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Output the tag of the latest tagged commit across all branches
+# From http://stackoverflow.com/a/7979255
+
+git rev-list --tags --max-count=1 | xargs git describe --tags
