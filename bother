@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Note: relies on https://www.npmjs.com/package/node-notifier-cli
+
+bash -c "$@"
+
+if [ $? -eq 0 ]; then
+  notify -m "Done"
+else
+  notify -m "Failed"
+fi
