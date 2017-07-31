@@ -1,11 +1,18 @@
 #!/bin/bash -e
 
+# Update Janus
 (cd ~/.vim && rake)
+
+# Update anything installed with homebrew
 (brew update && brew doctor && brew upgrade --all && brew cleanup)
+
+# Update globally installed NPM utilities
 (
   CURRENT_NPM=`npmrc | grep \* | awk '{print $2}'`;
   npmrc default;
   npm -g update;
   npmrc $CURRENT_NPM;
 )
+
+# Update Chromium
 (brew cask install --force chromium)
