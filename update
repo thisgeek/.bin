@@ -3,6 +3,9 @@
 # Update Janus
 (cd ~/.vim && rake)
 
+# Update Awesome-hammerspoon
+(cd ~/.hammerspoon && git pull)
+
 # Update anything installed with homebrew
 (brew update && brew doctor && brew upgrade --all && brew cleanup)
 
