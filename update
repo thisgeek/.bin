@@ -3,6 +3,9 @@
 # Update Janus
 (cd ~/.vim && rake)
 
+# Update additional vim plugins
+(cd ~/.janus && git submodule foreach 'git pull')
+
 # Update Awesome-hammerspoon
 (cd ~/.hammerspoon && git pull)
 
