@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# Clean out dead feature brances from the repo and the origin.
+
+REMOTE="origin"
+LIVING_BRANCH="master"
+
+function trim_remote {
+  git remote prune $REMOTE
+  git for-each-ref --merged=$REMOTE/$LIVING_BRANCH --format="%(refname:lstrip=3)" refs/remotes/$REMOTE \
+    | grep -v $LIVING_BRANCH \
+    | xargs git push $* --delete $REMOTE
+}
+
+function trim_local {
+  git for-each-ref --merged=$LIVING_BRANCH --format="%(refname:lstrip=2)" refs/heads \
+    | grep -v $LIVING_BRANCH \
+    | xargs git branch -D
+}
+
+#trim_remote
+trim_local
+
+# TODO: Support multiple living branches via custom configuration. Use cat to combine lists?
