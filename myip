@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # From http://askubuntu.com/questions/95910/command-for-determining-my-public-ip
 # Does not work over a VPN
 dig +short myip.opendns.com @resolver1.opendns.com
