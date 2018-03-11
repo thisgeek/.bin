@@ -4,6 +4,10 @@
 #
 # Somewhat similar to https://github.com/vackosar/git-obsolete-branch-remover
 
+################################################################
+# WARNING: Unsafe script. Do NOT use without understanding it. #
+################################################################
+
 REMOTE="origin"
 LIVING_BRANCH="master"
 
