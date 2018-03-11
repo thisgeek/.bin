@@ -2,10 +2,10 @@
 
 # Note: relies on https://www.npmjs.com/package/node-notifier-cli
 
-bash -c "$@"
+bash -c "$*"
 
 if [ $? -eq 0 ]; then
-  notify -t "Done" -m "$@"
+  notify -t "Done" -m "$*"
 else
-  notify -t "Failed" -m "$@"
+  notify -t "Failed" -m "$*"
 fi
