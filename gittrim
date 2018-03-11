@@ -27,4 +27,6 @@ function trim_local {
 trim_remote $*
 trim_local
 
+# TODO: Consider pairing with http://repo.or.cz/w/git.git/blob/HEAD:/contrib/git-resurrect.sh
+# TODO: Consider the $- variable for expanding the options flags
 # TODO: Support multiple living branches via custom configuration. Use cat to combine lists?
