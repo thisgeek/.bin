@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 # Clean out dead feature brances from the repo and the origin.
+#
+# Somewhat similar to https://github.com/vackosar/git-obsolete-branch-remover
 
 REMOTE="origin"
 LIVING_BRANCH="master"
