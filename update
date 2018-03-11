@@ -7,7 +7,8 @@
 (cd ~/.janus && git submodule foreach 'git pull')
 
 # Update Awesome-hammerspoon
-(cd ~/.hammerspoon && git pull)
+#Disabled while configuration often breaks against updates
+#(cd ~/.hammerspoon && git pull)
 
 # Update anything installed with homebrew
 (brew update && brew doctor && brew upgrade --all && brew cleanup)
