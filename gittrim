@@ -20,7 +20,7 @@ function trim_local {
     | xargs git branch -D
 }
 
-#trim_remote
+trim_remote $*
 trim_local
 
 # TODO: Support multiple living branches via custom configuration. Use cat to combine lists?
