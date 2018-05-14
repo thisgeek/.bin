@@ -11,7 +11,7 @@
 #(cd ~/.hammerspoon && git pull)
 
 # Update anything installed with homebrew
-(brew update && brew doctor && brew upgrade --all && brew cleanup)
+(brew update && brew doctor && brew upgrade && brew cleanup)
 
 # Update globally installed NPM utilities
 (
