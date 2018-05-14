@@ -1,10 +1,8 @@
 #!/bin/bash -e
 
-# Update Janus
-(cd ~/.vim && rake)
-
-# Update additional vim plugins
-(cd ~/.janus && git submodule foreach 'git pull')
+# Update vim plugins
+# https://tinyurl.com/y8o8mc9g
+vim -S <(echo -e "PlugUpdate \n qa")
 
 # Update Awesome-hammerspoon
 #Disabled while configuration often breaks against updates
