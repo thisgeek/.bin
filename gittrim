@@ -12,7 +12,6 @@ REMOTE="origin"
 LIVING_BRANCH="master"
 
 function trim_remote {
-  git remote prune $REMOTE
   git for-each-ref --merged=$REMOTE/$LIVING_BRANCH --format="%(refname:lstrip=3)" refs/remotes/$REMOTE \
     | grep -v $LIVING_BRANCH \
     | xargs git push $* --delete $REMOTE
@@ -24,7 +23,8 @@ function trim_local {
     | xargs git branch -D
 }
 
-trim_remote $*
+git remote prune $REMOTE
+# trim_remote $*
 trim_local
 
 # TODO: Consider pairing with http://repo.or.cz/w/git.git/blob/HEAD:/contrib/git-resurrect.sh
