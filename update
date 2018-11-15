@@ -17,7 +17,7 @@ brew reinstall -s vim --with-override-system-vi
 (
   CURRENT_NPM=`npmrc | grep \* | awk '{print $2}'`;
   npmrc default;
-  npm -g update;
+  npm outdated --global --parseable | cut -f4 -d: | xargs npm -g i;
   npmrc $CURRENT_NPM;
 )
 
