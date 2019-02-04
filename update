@@ -20,6 +20,3 @@ brew reinstall -s vim
   npm outdated --global --parseable | cut -f4 -d: | xargs npm -g i;
   npmrc $CURRENT_NPM;
 )
-
-# Update Chromium
-(brew cask install --force chromium)
