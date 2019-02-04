@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Extract the first url from a text input
+
+grep -oE "https?://[^ ]+" | head -n1
+
+# Perhaps a better regex could be found at
+# https://mathiasbynens.be/demo/url-regex
