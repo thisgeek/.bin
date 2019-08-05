@@ -10,8 +10,7 @@ vim -S <(echo -e "PlugUpdate \n qa")
 
 # Update anything installed with homebrew
 (brew update && brew doctor && brew upgrade && brew cleanup)
-# Workaround a conflict between brew's python 3.7 and brew's vim
-brew reinstall -s vim
+# TODO Reinstall only if outdated via brew outdated --json=v1
 
 # Update globally installed NPM utilities
 (
