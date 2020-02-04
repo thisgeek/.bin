@@ -4,18 +4,6 @@
 # https://tinyurl.com/y8o8mc9g
 vim -S <(echo -e "PlugUpdate \n qa")
 
-# Update Awesome-hammerspoon
-#Disabled while configuration often breaks against updates
-#(cd ~/.hammerspoon && git pull)
-
 # Update anything installed with homebrew
 (brew update && brew doctor && brew upgrade && brew cleanup)
 # TODO Reinstall only if outdated via brew outdated --json=v1
-
-# Update globally installed NPM utilities
-(
-  CURRENT_NPM=`npmrc | grep \* | awk '{print $2}'`;
-  npmrc default;
-  npm outdated --global --parseable | cut -f4 -d: | xargs npm -g i;
-  npmrc $CURRENT_NPM;
-)
