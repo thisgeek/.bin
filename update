@@ -2,7 +2,7 @@
 
 # Update vim plugins
 # https://tinyurl.com/y8o8mc9g
-vim -S <(echo -e "PlugUpdate \n qa")
+nvim -S <(echo -e "PlugUpdate \n qa")
 
 # Update anything installed with homebrew
 (brew update && brew doctor && brew upgrade && brew cleanup)
