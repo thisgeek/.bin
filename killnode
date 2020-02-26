@@ -1,2 +1,0 @@
-#!/bin/bash -e
-ps axwww -o pid,command | grep "node ." | grep -v grep | xargs | cut -d" " -f1 | xargs kill -9
