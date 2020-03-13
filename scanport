@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Scan what ports are listining on Mac OS. Run as sudo to see everything on the
+# machine.
+
+# SO Refs:
+# - https://stackoverflow.com/a/3855359/199644
+# - https://stackoverflow.com/a/18706913/199644
+# - https://stackoverflow.com/a/38797735/199644
+# - https://stackoverflow.com/a/51127321/199644
+
+if [[ "$OSTYPE" != "darwin"* ]]; then
+  echo "Error: It looks like you are not on a Mac, and scanport only works on Mac OS" >&2;
+  exit 1;
+fi
+
+lsof -i tcp:$1
